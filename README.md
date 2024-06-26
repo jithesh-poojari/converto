@@ -10,58 +10,59 @@ npm install converto
 
 ## Usage
 
+You can import the functions in two ways: directly from the main package or from specific modules.
+
+### Import from the main package:
+
 ```typescript
-import { toCamelCase, toSnakeCase } from 'converto/dist/conversions/stringConversions';
-import { numberWithCommas, toBinaryString } from 'converto/dist/conversions/numberConversions';
+import { toCamelCase, numberWithCommas } from 'converto';
 
 console.log(toCamelCase('hello-world')); // 'helloWorld'
-console.log(toSnakeCase('Hello World!')); // 'hello_world'
 console.log(numberWithCommas(1000000)); // '1,000,000'
-console.log(toBinaryString(10)); // '1010'
+```
+
+### Import from specific modules:
+
+```typescript
+import { toCamelCase } from 'converto/string';
+import { numberWithCommas } from 'converto/number';
+
+console.log(toCamelCase('hello-world')); // 'helloWorld'
+console.log(numberWithCommas(1000000)); // '1,000,000'
 ```
 
 ## API
 
 ### String Conversions
 
-#### `toCamelCase(str: string): string`
-
+#### `toCamelCase`
 Converts a string to camelCase.
 
-##### Parameters:
-- `str`: The string to convert.
-
-##### Returns:
-- The camelCased string.
-
-#### `toSnakeCase(str: string): string`
-
+#### `toSnakeCase`
 Converts a string to snake_case.
 
-##### Parameters:
-- `str`: The string to convert.
+#### `toPascalCase`
+Converts a string to PascalCase.
 
-##### Returns:
-- The snake_cased string.
+#### `toKebabCase`
+Converts a string to kebab-case.
+
+#### `toCapitalizedCase`
+Converts a string to Capitalized Case.
 
 ### Number Conversions
 
-#### `numberWithCommas(num: number): string`
-
+#### `numberWithCommas`
 Converts a number to a string with commas as thousand separators.
 
-##### Parameters:
-- `num`: The number to convert.
-
-##### Returns:
-- The formatted string.
-
-#### `toBinaryString(num: number): string`
-
+#### `toBinaryString`
 Converts a number to its binary representation as a string.
 
-##### Parameters:
-- `num`: The number to convert.
+#### `toHexString`
+Converts a number to its hexadecimal representation as a string.
 
-##### Returns:
-- The binary string.
+#### `toOctalString`
+Converts a number to its octal representation as a string.
+
+#### `toPercentageString`
+Converts a number to a percentage string with a specified number of decimal places.
