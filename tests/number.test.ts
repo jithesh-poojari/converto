@@ -1,4 +1,4 @@
-import { numberWithCommas, toBinaryString } from "../src/conversion/number-conversions"
+import { numberWithCommas, toBinaryString } from "../src/conversion/number"
 
 test('converts number to string with commas', () => {
   expect(numberWithCommas(1000000)).toBe('1,000,000');
