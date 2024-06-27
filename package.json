@@ -1,14 +1,33 @@
 {
   "name": "converto",
   "version": "1.1.1",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "build": "tsc",
+    "lint": "eslint . --ext .ts"
   },
-  "keywords": [],
-  "author": "",
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "conversion",
+    "utilities",
+    "typescript",
+    "string",
+    "number"
+  ],
+  "author": "Jithesh <jithesh.coder@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jithesh-poojari/converto.git"
+  },
   "license": "ISC",
-  "description": "",
+  "bugs": {
+    "url": "https://github.com/jithesh-poojari/converto/issues"
+  },
+  "homepage": "https://github.com/jithesh-poojari/converto",
+  "description": "A lightweight TypeScript library for various conversion utilities.",
   "devDependencies": {
     "@types/jest": "^29.5.12",
     "@typescript-eslint/eslint-plugin": "^7.14.1",
