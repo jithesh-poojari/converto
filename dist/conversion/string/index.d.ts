@@ -136,3 +136,4 @@ export declare function toLeetSpeak(str: string): string;
  * shuffleString('hello'); // 'olelh'
  */
 export declare function shuffleString(str: string): string;
+//# sourceMappingURL=index.d.ts.map

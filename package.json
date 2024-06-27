@@ -11,6 +11,22 @@
   "files": [
     "dist"
   ],
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.js"
+    },
+    "./string": {
+      "import": "./dist/conversion/string.js",
+      "require": "./dist/conversion/string.js",
+      "types": "./dist/conversion/string.d.ts"
+    },
+    "./number": {
+      "import": "./dist/conversion/number.js",
+      "require": "./dist/conversion/number.js",
+      "types": "./dist/conversion/number.d.ts"
+    }
+  },
   "keywords": [
     "conversion",
     "utilities",

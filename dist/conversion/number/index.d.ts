@@ -55,3 +55,4 @@ export declare function toOctalString(num: number): string;
  * ```
  */
 export declare function toPercentageString(num: number, decimals?: number): string;
+//# sourceMappingURL=index.d.ts.map
