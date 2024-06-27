@@ -17,14 +17,14 @@
       "require": "./dist/index.js"
     },
     "./string": {
-      "import": "./dist/conversion/string.js",
-      "require": "./dist/conversion/string.js",
-      "types": "./dist/conversion/string.d.ts"
+      "import": "./dist/conversion/string/index.js",
+      "require": "./dist/conversion/string/index.js",
+      "types": "./dist/conversion/string/index.d.ts"
     },
     "./number": {
-      "import": "./dist/conversion/number.js",
-      "require": "./dist/conversion/number.js",
-      "types": "./dist/conversion/number.d.ts"
+      "import": "./dist/conversion/number/index.js",
+      "require": "./dist/conversion/number/index.js",
+      "types": "./dist/conversion/number/index.d.ts"
     }
   },
   "keywords": [
