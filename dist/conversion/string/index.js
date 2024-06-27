@@ -25,7 +25,7 @@ exports.shuffleString = shuffleString;
  * @returns The camelCased string.
  */
 function toCamelCase(str) {
-    return str.replace(/[\s_-]+(\w)/g, function (_, char) { return char.toUpperCase(); });
+    return str.replace(/[\s_-]+(\w)/g, (_, char) => char.toUpperCase());
 }
 /**
  * Converts a string to snake_case.
@@ -52,7 +52,7 @@ function toSnakeCase(str) {
  * @returns The PascalCased string.
  */
 function toPascalCase(str) {
-    return str.replace(/(\w)(\w*)/g, function (_, firstChar, restChars) {
+    return str.replace(/(\w)(\w*)/g, (_, firstChar, restChars) => {
         return firstChar.toUpperCase() + restChars.toLowerCase();
     }).replace(/[\s_-]/g, '');
 }
@@ -81,7 +81,7 @@ function toKebabCase(str) {
  * @returns The Capitalized Case string.
  */
 function toCapitalizedCase(str) {
-    return str.toLowerCase().replace(/(?:^|\s)\S/g, function (char) { return char.toUpperCase(); });
+    return str.toLowerCase().replace(/(?:^|\s)\S/g, char => char.toUpperCase());
 }
 /**
  * Converts a sentence to title case.
@@ -93,11 +93,11 @@ function toCapitalizedCase(str) {
  * @returns The title cased sentence.
  */
 function toTitleCase(sentence) {
-    var words = sentence.split(/[\s\-_]+/);
-    var titleCaseWords = words.map(function (word) {
+    const words = sentence.split(/[\s\-_]+/);
+    const titleCaseWords = words.map(word => {
         return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
     });
-    var titleCaseSentence = titleCaseWords.join(' ');
+    const titleCaseSentence = titleCaseWords.join(' ');
     return titleCaseSentence;
 }
 /**
@@ -161,7 +161,7 @@ function toDotCase(str) {
  * toAlternatingCase('hello world'); // 'hElLo WoRlD'
  */
 function toAlternatingCase(str) {
-    return str.split('').map(function (char, index) {
+    return str.split('').map((char, index) => {
         if (char === ' ')
             return ' ';
         return index % 2 === 0 ? char.toLowerCase() : char.toUpperCase();
@@ -175,7 +175,7 @@ function toAlternatingCase(str) {
  * toInverseCase('Hello World'); // 'hELLO wORLD'
  */
 function toInverseCase(str) {
-    return str.split('').map(function (char) {
+    return str.split('').map(char => {
         return char === char.toUpperCase() ? char.toLowerCase() : char.toUpperCase();
     }).join('');
 }
@@ -197,11 +197,11 @@ function reverseString(str) {
  * toLeetSpeak('hello world'); // 'h3ll0 w0rld'
  */
 function toLeetSpeak(str) {
-    var leetMap = {
+    const leetMap = {
         'a': '4', 'e': '3', 'i': '1', 'o': '0', 't': '7', 's': '5', 'b': '8', 'g': '9'
     };
-    return str.split('').map(function (char) {
-        var lowerChar = char.toLowerCase();
+    return str.split('').map(char => {
+        const lowerChar = char.toLowerCase();
         return leetMap[lowerChar] || lowerChar;
     }).join('');
 }
@@ -213,11 +213,10 @@ function toLeetSpeak(str) {
  * shuffleString('hello'); // 'olelh'
  */
 function shuffleString(str) {
-    var _a;
-    var arr = str.split('');
-    for (var i = arr.length - 1; i > 0; i--) {
-        var j = Math.floor(Math.random() * (i + 1));
-        _a = [arr[j], arr[i]], arr[i] = _a[0], arr[j] = _a[1];
+    const arr = str.split('');
+    for (let i = arr.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [arr[i], arr[j]] = [arr[j], arr[i]];
     }
     return arr.join('');
 }
