@@ -1,7 +1,7 @@
 /**
  * Converts a number to a string with commas as thousand separators.
- * @param num - The number to convert.
- * @returns The formatted string.
+ * @param {number} num - The number to convert.
+ * @returns {string} The formatted string.
  * @example
  * ```typescript
  * numberWithCommas(1000); // "1,000"
@@ -14,8 +14,8 @@ export function numberWithCommas(num: number): string {
 
 /**
  * Converts a number to its binary representation as a string.
- * @param num - The number to convert.
- * @returns The binary string.
+ * @param {number} num - The number to convert.
+ * @returns {string} The binary string.
  * @example
  * ```typescript
  * toBinary(10); // "1010"
@@ -28,8 +28,8 @@ export function toBinary(num: number): string {
 
 /**
  * Converts a number to its hexadecimal representation as a string.
- * @param num - The number to convert.
- * @returns The hexadecimal string.
+ * @param {number} num - The number to convert.
+ * @returns {string} The hexadecimal string.
  * @example
  * ```typescript
  * toHex(255); // "FF"
@@ -42,8 +42,8 @@ export function toHex(num: number): string {
 
 /**
  * Converts a number to its octal representation as a string.
- * @param num - The number to convert.
- * @returns The octal string.
+ * @param {number} num - The number to convert.
+ * @returns {string} The octal string.
  * @example
  * ```typescript
  * toOctal(8); // "10"
@@ -56,8 +56,8 @@ export function toOctal(num: number): string {
 
 /**
  * Converts a number to a decimal string.
- * @param num - The number to convert.
- * @returns The decimal string.
+ * @param {number} num - The number to convert.
+ * @returns {string} The decimal string.
  * @example
  * ```typescript
  * toDecimal(255); // "255"
@@ -70,8 +70,8 @@ export function toDecimal(num: number): string {
 
 /**
  * Converts radians to degrees.
- * @param radians - The angle in radians.
- * @returns The angle in degrees.
+ * @param {number} radians - The angle in radians.
+ * @returns {number} The angle in degrees.
  * @example
  * ```typescript
  * toDegrees(Math.PI); // "180"
@@ -84,8 +84,8 @@ export function toDegrees(radians: number): number {
 
 /**
  * Converts degrees to radians.
- * @param degrees - The angle in degrees.
- * @returns The angle in radians.
+ * @param {number} degrees - The angle in degrees.
+ * @returns {number} The angle in radians.
  * @example
  * ```typescript
  * toRadians(180); // "3.141592653589793"
@@ -98,10 +98,10 @@ export function toRadians(degrees: number): number {
 
 /**
  * Converts a number from one base to another.
- * @param value - The number to convert (as a string).
- * @param fromBase - The base of the input number ("bin", "oct", "dec", "hex").
- * @param toBase - The base to convert the number to ("bin", "oct", "dec", "hex").
- * @returns The converted number as a string.
+ * @param {string} value - The number to convert (as a string).
+ * @param {'bin' | 'oct' | 'dec' | 'hex'} fromBase - The base of the input number ("bin", "oct", "dec", "hex").
+ * @param {'bin' | 'oct' | 'dec' | 'hex'} toBase - The base to convert the number to ("bin", "oct", "dec", "hex").
+ * @returns {string} The converted number as a string.
  * @example
  * ```typescript
  * convertBase("FF", "hex", "dec"); // "255"
@@ -126,11 +126,12 @@ export function convertBase(value: string, fromBase: 'bin' | 'oct' | 'dec' | 'he
   // Convert from decimal to the target base
   return decimalValue.toString(toBaseNum).toUpperCase();
 }
+
 /**
  * Converts a number to a percentage string with a specified number of decimal places.
- * @param num - The number to convert.
- * @param decimals - The number of decimal places.
- * @returns The percentage string.
+ * @param {number} num - The number to convert.
+ * @param {number} [decimals=2] - The number of decimal places.
+ * @returns {string} The percentage string.
  * @example
  * ```typescript
  * toPercentage(0.1234); // "12.34%"
@@ -144,8 +145,8 @@ export function toPercentage(num: number, decimals: number = 2): string {
 
 /**
  * Rounds a number to the nearest integer.
- * @param num - The number to round.
- * @returns The rounded integer.
+ * @param {number} num - The number to round.
+ * @returns {number} The rounded integer.
  * @example
  * ```typescript
  * round(5.67); // 6
@@ -158,9 +159,9 @@ export function round(num: number): number {
 
 /**
  * Rounds a number to a specified number of decimal places.
- * @param num - The number to round.
- * @param decimals - The number of decimal places.
- * @returns The rounded number.
+ * @param {number} num - The number to round.
+ * @param {number} decimals - The number of decimal places.
+ * @returns {number} The rounded number.
  * @example
  * ```typescript
  * roundTo(5.678, 2); // 5.68

@@ -21,10 +21,10 @@
       "require": "./dist/conversion/string/index.js",
       "types": "./dist/conversion/string/index.d.ts"
     },
-    "./number": {
-      "import": "./dist/conversion/number/index.js",
-      "require": "./dist/conversion/number/index.js",
-      "types": "./dist/conversion/number/index.d.ts"
+    "./unit": {
+      "import": "./dist/conversion/unit/index.js",
+      "require": "./dist/conversion/unit/index.js",
+      "types": "./dist/conversion/unit/index.d.ts"
     }
   },
   "keywords": [

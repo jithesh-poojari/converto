@@ -16,3 +16,4 @@ var __exportStar = (this && this.__exportStar) || function(m, exports) {
 Object.defineProperty(exports, "__esModule", { value: true });
 __exportStar(require("./conversion/number"), exports);
 __exportStar(require("./conversion/string"), exports);
+__exportStar(require("./conversion/unit"), exports);

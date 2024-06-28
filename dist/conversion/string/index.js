@@ -21,8 +21,8 @@ exports.shuffleString = shuffleString;
  * ```typescript
  * const camelCased = toCamelCase('hello_world'); // Returns 'helloWorld'
  * ```
- * @param str - The string to convert.
- * @returns The camelCased string.
+ * @param {string} str - The string to convert.
+ * @returns {string} The camelCased string.
  */
 function toCamelCase(str) {
     return str.replace(/[\s_-]+(\w)/g, (_, char) => char.toUpperCase());
@@ -33,8 +33,8 @@ function toCamelCase(str) {
  * ```typescript
  * const snakeCased = toSnakeCase('Hello World!'); // Returns 'hello_world'
  * ```
- * @param str - The string to convert.
- * @returns The snake_cased string.
+ * @param {string} str - The string to convert.
+ * @returns {string} The snake_cased string.
  */
 function toSnakeCase(str) {
     return str
@@ -48,13 +48,13 @@ function toSnakeCase(str) {
  * ```typescript
  * const pascalCased = toPascalCase('hello-world'); // Returns 'HelloWorld'
  * ```
- * @param str - The string to convert.
- * @returns The PascalCased string.
+ * @param {string} str - The string to convert.
+ * @returns {string} The PascalCased string.
  */
 function toPascalCase(str) {
-    return str.replace(/(\w)(\w*)/g, (_, firstChar, restChars) => {
-        return firstChar.toUpperCase() + restChars.toLowerCase();
-    }).replace(/[\s_-]/g, '');
+    return str.replace(/[\s_\-]+(\w)/g, (_, char) => char.toUpperCase())
+        .replace(/^(\w)/, (_, char) => char.toUpperCase())
+        .replace(/[\s_\-]+/g, '');
 }
 /**
  * Converts a string to kebab-case.
@@ -62,8 +62,8 @@ function toPascalCase(str) {
  * ```typescript
  * const kebabCased = toKebabCase('Hello World!'); // Returns 'hello-world'
  * ```
- * @param str - The string to convert.
- * @returns The kebab-cased string.
+ * @param {string} str - The string to convert.
+ * @returns {string} The kebab-cased string.
  */
 function toKebabCase(str) {
     return str
@@ -77,8 +77,8 @@ function toKebabCase(str) {
  * ```typescript
  * const capitalized = toCapitalizedCase('hello world'); // Returns 'Hello World'
  * ```
- * @param str - The string to convert.
- * @returns The Capitalized Case string.
+ * @param {string} str - The string to convert.
+ * @returns {string} The Capitalized Case string.
  */
 function toCapitalizedCase(str) {
     return str.toLowerCase().replace(/(?:^|\s)\S/g, char => char.toUpperCase());
@@ -89,8 +89,8 @@ function toCapitalizedCase(str) {
  * ```typescript
  * const titleCased = toTitleCase('hello-world'); // Returns 'Hello World'
  * ```
- * @param sentence - The sentence to convert.
- * @returns The title cased sentence.
+ * @param {string} sentence - The sentence to convert.
+ * @returns {string} The title cased sentence.
  */
 function toTitleCase(sentence) {
     const words = sentence.split(/[\s\-_]+/);
@@ -106,8 +106,8 @@ function toTitleCase(sentence) {
  * ```typescript
  * const sentenceCased = toSentenceCase('hello world'); // Returns 'Hello world'
  * ```
- * @param str - The string to convert.
- * @returns The Sentence cased string.
+ * @param {string} str - The string to convert.
+ * @returns {string} The Sentence cased string.
  */
 function toSentenceCase(str) {
     return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
@@ -118,8 +118,8 @@ function toSentenceCase(str) {
  * ```typescript
  * const constantCased = toConstantCase('Hello World'); // Returns 'HELLO_WORLD'
  * ```
- * @param str - The string to convert.
- * @returns The CONSTANT_CASE string.
+ * @param {string} str - The string to convert.
+ * @returns {string} The CONSTANT_CASE string.
  */
 function toConstantCase(str) {
     return str.replace(/[^\w\s]/gi, ' ') // Remove non-word characters except spaces
@@ -132,8 +132,8 @@ function toConstantCase(str) {
  * ```typescript
  * const pathCased = toPathCase('Hello World'); // Returns 'hello/world'
  * ```
- * @param str - The string to convert.
- * @returns The Path cased string.
+ * @param {string} str - The string to convert.
+ * @returns {string} The Path cased string.
  */
 function toPathCase(str) {
     return str.replace(/[^\w\s]/gi, ' ') // Remove non-word characters except spaces
@@ -142,8 +142,8 @@ function toPathCase(str) {
 }
 /**
  * Converts a string to dot.case.
- * @param str - The string to convert.
- * @returns The dot.cased string.
+ * @param {string} str - The string to convert.
+ * @returns {string} The dot.cased string.
  * @example
  * toDotCase('hello world'); // 'hello.world'
  */
@@ -155,8 +155,8 @@ function toDotCase(str) {
 }
 /**
  * Converts a string to alternating case.
- * @param str - The string to convert.
- * @returns The alternating cased string.
+ * @param {string} str - The string to convert.
+ * @returns {string} The alternating cased string.
  * @example
  * toAlternatingCase('hello world'); // 'hElLo WoRlD'
  */
@@ -169,8 +169,8 @@ function toAlternatingCase(str) {
 }
 /**
  * Converts a string to inverse case.
- * @param str - The string to convert.
- * @returns The inverse cased string.
+ * @param {string} str - The string to convert.
+ * @returns {string} The inverse cased string.
  * @example
  * toInverseCase('Hello World'); // 'hELLO wORLD'
  */
@@ -181,8 +181,8 @@ function toInverseCase(str) {
 }
 /**
  * Reverses the characters in a string.
- * @param str - The string to reverse.
- * @returns The reversed string.
+ * @param {string} str - The string to reverse.
+ * @returns {string} The reversed string.
  * @example
  * reverseString('hello world'); // 'dlrow olleh'
  */
@@ -191,8 +191,8 @@ function reverseString(str) {
 }
 /**
  * Converts a string to leetspeak (1337speak).
- * @param str - The string to convert.
- * @returns The leetspeak string.
+ * @param {string} str - The string to convert.
+ * @returns {string} The leetspeak string.
  * @example
  * toLeetSpeak('hello world'); // 'h3ll0 w0rld'
  */
@@ -207,8 +207,8 @@ function toLeetSpeak(str) {
 }
 /**
  * Shuffles the characters in a string.
- * @param str - The string to shuffle.
- * @returns The shuffled string.
+ * @param {string} str - The string to shuffle.
+ * @returns {string} The shuffled string.
  * @example
  * shuffleString('hello'); // 'olelh'
  */
