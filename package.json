@@ -43,6 +43,9 @@
   "bugs": {
     "url": "https://github.com/jithesh-poojari/converto/issues"
   },
+  "publishConfig": {
+    "registry": "https://github.com/jithesh-poojari/converto.git"
+  },
   "homepage": "https://github.com/jithesh-poojari/converto",
   "description": "A lightweight TypeScript library for various conversion utilities.",
   "devDependencies": {
